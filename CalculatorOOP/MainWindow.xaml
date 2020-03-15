@@ -1,0 +1,36 @@
+﻿<Window x:Class="CalculatorOOP.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:CalculatorOOP"
+        mc:Ignorable="d"
+        Title="CalculatorOOP" Height="604" Width="387.333"
+        ResizeMode="NoResize"
+        >
+
+    <Grid Margin="0,0,-0.333,0">
+        <Button Content="1" HorizontalAlignment="Left" Margin="27,418,0,0" VerticalAlignment="Top" Width="67" Height="54" />
+        <Button Content="2" HorizontalAlignment="Left" Margin="110,418,0,0" VerticalAlignment="Top" Width="68" Height="54"/>
+        <Button Content="3" HorizontalAlignment="Left" Margin="195,418,0,0" VerticalAlignment="Top" Width="69" Height="54"/>
+        <Button Content="4" HorizontalAlignment="Left" Margin="27,348,0,0" VerticalAlignment="Top" Width="67" Height="53"/>
+        <Button Content="5" HorizontalAlignment="Left" Margin="110,348,0,0" VerticalAlignment="Top" Width="68" Height="53"/>
+        <Button Content="6" HorizontalAlignment="Left" Margin="195,348,0,0" VerticalAlignment="Top" Width="69" Height="53"/>
+        <Button Content="+" HorizontalAlignment="Left" Margin="280,348,0,0" VerticalAlignment="Top" Width="68" Height="53"/>
+        <Button Content="7" HorizontalAlignment="Left" Margin="27,280,0,0" VerticalAlignment="Top" Width="67" Height="55"/>
+        <Button Content="8" HorizontalAlignment="Left" Margin="110,280,0,0" VerticalAlignment="Top" Width="68" Height="55"/>
+        <Button Content="9" HorizontalAlignment="Left" Margin="195,280,0,0" VerticalAlignment="Top" Width="69" Height="55"/>
+        <Button Content="-" HorizontalAlignment="Left" Margin="280,280,0,0" VerticalAlignment="Top" Width="68" Height="55"/>
+        <Button Content="MC" HorizontalAlignment="Left" Margin="24,215,0,0" VerticalAlignment="Top" Width="68" Height="55"/>
+        <Button Content="MR" HorizontalAlignment="Left" Margin="110,215,0,0" VerticalAlignment="Top" Width="68" Height="55"/>
+        <Button Content=":" HorizontalAlignment="Left" Margin="195,215,0,0" VerticalAlignment="Top" Width="69" Height="55"/>
+        <Button Content="X" HorizontalAlignment="Left" Margin="280,215,0,0" VerticalAlignment="Top" Width="68" Height="55"/>
+        <Button Content="0" HorizontalAlignment="Left" Margin="27,489,0,0" VerticalAlignment="Top" Width="151" Height="55"/>
+        <Button Content="." HorizontalAlignment="Left" Margin="195,489,0,0" VerticalAlignment="Top" Width="69" Height="55"/>
+        <Button Content="=" HorizontalAlignment="Left" Margin="280,418,0,0" VerticalAlignment="Top" Width="68" Height="126"/>
+        <Button Content="Off" HorizontalAlignment="Left" Margin="280,144,0,0" VerticalAlignment="Top" Width="68" Height="55" />
+        <Button Content="Sqrt" HorizontalAlignment="Left" Margin="195,144,0,0" VerticalAlignment="Top" Width="69" Height="55" />
+        <TextBox HorizontalAlignment="Left" Height="55" Margin="27,144,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="151"/>
+        <TextBox HorizontalAlignment="Left" Height="104" Margin="27,24,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="321"/>
+    </Grid>
+</Window>
