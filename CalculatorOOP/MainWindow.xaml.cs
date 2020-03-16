@@ -25,5 +25,9 @@ namespace CalculatorOOP
             InitializeComponent();
         }
 
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            B1.BorderBrush = new SolidColorBrush(Colors.Orange);
+        }
     }
 }

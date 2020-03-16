@@ -11,24 +11,57 @@
         >
 
     <Window.Resources>
-        <Style  TargetType="Button" x:Key="DButton">
-            <Setter Property="Background" Value="PaleVioletRed">
+        <Style x:Key="TButton" TargetType="Button">
+            <Setter Property="OverridesDefaultStyle" Value="True"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Grid>
+                            <Border Name="ButtonBorder" CornerRadius="30"  
+                                BorderBrush="Black" BorderThickness="1">
+                            </Border>
+                            <ContentPresenter HorizontalAlignment="Center"
+                                                VerticalAlignment="Center"/>
+                        </Grid>
+                        
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="Button.IsPressed" Value="True">
+                                <Setter TargetName="ButtonBorder" Property="BorderBrush"
+                                        Value="Orange" />
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+
+                    </ControlTemplate>
+                </Setter.Value>
             </Setter>
+
+            
+            
         </Style>
-    </Window.Resources>
-    
-    <Grid Margin="0,0,-0.333,0">
+
+        <Style TargetType="Button" x:Key="DButton">
+            <Setter Property="Background" Value="PaleVioletRed"/>
+            
+        </Style>
         
-        <Button Content="1" HorizontalAlignment="Left" Margin="31,427,0,0" VerticalAlignment="Top" Width="60" Height="60">
+        
+
+    </Window.Resources>
+
+    <Grid Margin="0,0,-0.333,0">
+        <Button x:Name="B1" Content="1" HorizontalAlignment="Left" Margin="31,427,0,0" VerticalAlignment="Top" Width="60" Height="60" Click="Button_Click">
             <Button.Resources>
                 <Style TargetType="Border">
                     <Setter Property="CornerRadius" Value="20"/>
                 </Style>
             </Button.Resources>
         </Button>
-        
-        <Button Style="{StaticResource DButton}" Content="2" HorizontalAlignment="Left" Margin="104,427,0,0" VerticalAlignment="Top" Width="60" Height="60"/>
-        <Button Content="3" HorizontalAlignment="Left" Margin="179,427,0,0" VerticalAlignment="Top" Width="60" Height="60"/>
+
+        <Button Style="{StaticResource TButton}"  Content="2" HorizontalAlignment="Left" Margin="104,427,0,0" VerticalAlignment="Top" Width="60" Height="60" />
+        <Button Style="{StaticResource DButton}"  Content="3" HorizontalAlignment="Left" Margin="179,427,0,0" VerticalAlignment="Top" Width="60" Height="60">
+ 
+        </Button>
+
         <Button Content="4" HorizontalAlignment="Left" Margin="31,357,0,0" VerticalAlignment="Top" Width="60" Height="60"/>
         <Button Content="5" HorizontalAlignment="Left" Margin="104,357,0,0" VerticalAlignment="Top" Width="60" Height="60"/>
         <Button Content="6" HorizontalAlignment="Left" Margin="179,357,0,0" VerticalAlignment="Top" Width="60" Height="60"/>
