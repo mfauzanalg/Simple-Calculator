@@ -7,7 +7,7 @@
         mc:Ignorable="d"
         Title="CalculatorOOP" Height="616.667" Width="346.333"
         ResizeMode="NoResize"
-        Background="BlanchedAlmond"
+        Background="#000000"
         >
 
     <Window.Resources>
@@ -38,16 +38,16 @@
 
         <Style TargetType="Button" x:Key="DButton">
             <Setter Property="Background" Value="PaleVioletRed"/>
-            
+
         </Style>
 
         <Style x:Key="RoundButton" TargetType="Button">
-            <Setter Property="Background" Value="Gray"/>
-            <Setter Property="Foreground" Value="White"/>
+            <Setter Property="Background" Value="#333333"/>
+            <Setter Property="Foreground" Value="#f2f5f6"/>
             <Setter Property="Template">
                 <Setter.Value>
                     <ControlTemplate TargetType="Button">
-                        <Border CornerRadius="20" Background="{TemplateBinding Background}" BorderThickness="1" BorderBrush="Black">
+                        <Border CornerRadius="20" Background="{TemplateBinding Background}" BorderThickness="1">
                             <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center">
                             </ContentPresenter>
                         </Border>
@@ -59,37 +59,28 @@
     </Window.Resources>
 
     <Grid Margin="0,0,-0.333,0">
-        <Button x:Name="B1" Content="1" HorizontalAlignment="Left" Margin="31,427,0,0" VerticalAlignment="Top" Width="60" Height="60" Click="Button_Click">
-            <Button.Resources>
-                <Style TargetType="Border">
-                    <Setter Property="CornerRadius" Value="20"/>
-                </Style>
-            </Button.Resources>
-        </Button>
+        <Button x:Name="B0" Style="{StaticResource RoundButton}" Content="0" HorizontalAlignment="Left" Margin="31,498,0,0" VerticalAlignment="Top" Width="60" Height="60" FontFamily="Consolas" FontSize="26"/>
+        <Button x:Name="B1" Style="{StaticResource RoundButton}" Content="1" HorizontalAlignment="Left" Margin="31,427,0,0" VerticalAlignment="Top" Width="60" Height="60" FontFamily="Consolas" FontSize="26"/>
+        <Button x:Name="B2" Style="{StaticResource RoundButton}" Content="2" HorizontalAlignment="Left" Margin="104,427,0,0" VerticalAlignment="Top" Width="60" Height="60" FontFamily="Consolas" FontSize="26"/>
+        <Button x:Name="B3" Style="{StaticResource RoundButton}" Content="3" HorizontalAlignment="Left" Margin="179,427,0,0" VerticalAlignment="Top" Width="60" Height="60" FontFamily="Consolas" FontSize="26"/>
+        <Button x:Name="B4" Style="{StaticResource RoundButton}" Content="4" HorizontalAlignment="Left" Margin="31,357,0,0" VerticalAlignment="Top" Width="60" Height="60" FontFamily="Consolas" FontSize="26"/>
+        <Button x:Name="B5" Style="{StaticResource RoundButton}" Content="5" HorizontalAlignment="Left" Margin="104,357,0,0" VerticalAlignment="Top" Width="60" Height="60" FontFamily="Consolas" FontSize="26"/>
+        <Button x:Name="B6" Style="{StaticResource RoundButton}" Content="6" HorizontalAlignment="Left" Margin="179,357,0,0" VerticalAlignment="Top" Width="60" Height="60" FontFamily="Consolas" FontSize="26"/>
+        <Button x:Name="B7" Style="{StaticResource RoundButton}" Content="7" HorizontalAlignment="Left" Margin="31,287,0,0" VerticalAlignment="Top" Width="60" Height="60" FontFamily="Consolas" FontSize="26"/>
+        <Button x:Name="B8" Style="{StaticResource RoundButton}" Content="8" HorizontalAlignment="Left" Margin="104,287,0,0" VerticalAlignment="Top" Width="60" Height="60" FontFamily="Consolas" FontSize="26"/>
+        <Button x:Name="B9" Style="{StaticResource RoundButton}" Content="9" HorizontalAlignment="Left" Margin="179,287,0,0" VerticalAlignment="Top" Width="60" Height="60" FontFamily="Consolas" FontSize="26"/>
 
-        <Button Style="{StaticResource TButton}"  Content="2" HorizontalAlignment="Left" Margin="104,427,0,0" VerticalAlignment="Top" Width="60" Height="60" />
-        <Button Style="{StaticResource DButton}"  Content="3" HorizontalAlignment="Left" Margin="179,427,0,0" VerticalAlignment="Top" Width="60" Height="60">
- 
-        </Button>
-
-        <Button Style="{StaticResource RoundButton}"  Content="4" HorizontalAlignment="Left" Margin="31,357,0,0" VerticalAlignment="Top" Width="60" Height="60"/>
-        <Button Content="5" HorizontalAlignment="Left" Margin="104,357,0,0" VerticalAlignment="Top" Width="60" Height="60"/>
-        <Button Content="6" HorizontalAlignment="Left" Margin="179,357,0,0" VerticalAlignment="Top" Width="60" Height="60"/>
-        <Button Content="+" HorizontalAlignment="Left" Margin="254,357,0,0" VerticalAlignment="Top" Width="60" Height="60"/>
-        <Button Content="7" HorizontalAlignment="Left" Margin="31,288,0,0" VerticalAlignment="Top" Width="60" Height="60"/>
-        <Button Content="8" HorizontalAlignment="Left" Margin="104,288,0,0" VerticalAlignment="Top" Width="60" Height="60"/>
-        <Button Content="9" HorizontalAlignment="Left" Margin="179,288,0,0" VerticalAlignment="Top" Width="60" Height="60"/>
-        <Button Content="-" HorizontalAlignment="Left" Margin="253,288,0,0" VerticalAlignment="Top" Width="60" Height="60"/>
-        <Button Content="MC" HorizontalAlignment="Left" Margin="31,217,0,0" VerticalAlignment="Top" Width="60" Height="60"/>
-        <Button Content="MR" HorizontalAlignment="Left" Margin="104,217,0,0" VerticalAlignment="Top" Width="60" Height="60"/>
-        <Button Content=":" HorizontalAlignment="Left" Margin="179,217,0,0" VerticalAlignment="Top" Width="60" Height="60"/>
-        <Button Content="X" HorizontalAlignment="Left" Margin="254,217,0,0" VerticalAlignment="Top" Width="60" Height="60"/>
-        <Button Content="0" HorizontalAlignment="Left" Margin="31,498,0,0" VerticalAlignment="Top" Width="136" Height="60"/>
-        <Button Content="." HorizontalAlignment="Left" Margin="179,498,0,0" VerticalAlignment="Top" Width="60" Height="60"/>
-        <Button Content="=" HorizontalAlignment="Left" Margin="254,427,0,0" VerticalAlignment="Top" Width="59" Height="131"/>
-        <Button Content="Off" HorizontalAlignment="Left" Margin="254,146,0,0" VerticalAlignment="Top" Width="60" Height="54" />
-        <Button Content="Sqrt" HorizontalAlignment="Left" Margin="179,146,0,0" VerticalAlignment="Top" Width="60" Height="55" />
-        <TextBox HorizontalAlignment="Left" Height="55" Margin="31,146,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="132"/>
-        <TextBox HorizontalAlignment="Left" Height="104" Margin="31,26,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="282" Background="White"/>
+        <Button x:Name="BA" Style="{StaticResource RoundButton}" Content="ANS" HorizontalAlignment="Left" Margin="179,217,0,0" VerticalAlignment="Top" Width="60" Height="60" FontFamily="Consolas" FontSize="22" Background="#FFA6A6A6" Foreground="#FF2D2E2E" />
+        <Button x:Name="BP" Style="{StaticResource RoundButton}" Content="+" HorizontalAlignment="Left" Margin="253,427,0,0" VerticalAlignment="Top" Width="60" Height="60" FontFamily="Consolas" FontSize="26" Background="#FFFB9600"/>
+        <Button x:Name="BM" Style="{StaticResource RoundButton}" Content="-" HorizontalAlignment="Left" Margin="253,357,0,0" VerticalAlignment="Top" Width="60" Height="60" FontFamily="Consolas" FontSize="26" Background="#FFFB9600"/>
+        <Button x:Name="BC" Style="{StaticResource RoundButton}" Content="MC" HorizontalAlignment="Left" Margin="31,217,0,0" VerticalAlignment="Top" Width="60" Height="60" FontFamily="Consolas" FontSize="26" Background="#FFA6A6A6" Foreground="#FF2D2E2E"/>
+        <Button x:Name="BR" Style="{StaticResource RoundButton}" Content="MR" HorizontalAlignment="Left" Margin="104,217,0,0" VerticalAlignment="Top" Width="60" Height="60" FontFamily="Consolas" FontSize="26" Background="#FFA6A6A6" Foreground="#FF2D2E2E"/>
+        <Button x:Name="BD" Style="{StaticResource RoundButton}" Content=":" HorizontalAlignment="Left" Margin="253,217,0,0" VerticalAlignment="Top" Width="60" Height="60" FontFamily="Consolas" FontSize="26" Background="#FFFB9600"/>
+        <Button x:Name="BX" Style="{StaticResource RoundButton}" Content="X" HorizontalAlignment="Left" Margin="253,287,0,0" VerticalAlignment="Top" Width="60" Height="60" FontFamily="Consolas" FontSize="26" Background="#FFFB9600"/>
+        <Button x:Name="BZ" Style="{StaticResource RoundButton}" Content="." HorizontalAlignment="Left" Margin="104,498,0,0" VerticalAlignment="Top" Width="60" Height="60" FontFamily="Consolas" FontSize="26"/>
+        <Button x:Name="BE" Style="{StaticResource RoundButton}" Content="=" HorizontalAlignment="Left" Margin="179,498,0,0" VerticalAlignment="Top" Width="134" Height="60" FontFamily="Consolas" FontSize="26" Background="#FFFB9600"/>
+        <Button x:Name="BO" Style="{StaticResource RoundButton}" Content="Off" HorizontalAlignment="Left" Margin="31,146,0,0" VerticalAlignment="Top" Width="133" Height="60" FontFamily="Consolas" FontSize="20" Background="#FFA6A6A6" Foreground="#FF2D2E2E"/>
+        <Button x:Name="BS" Style="{StaticResource RoundButton}" Content="Sqrt" HorizontalAlignment="Left" Margin="253,146,0,0" VerticalAlignment="Top" Width="60" Height="60" FontFamily="Consolas" FontSize="20" Background="#FFFB9600" />
+        <Button x:Name="BO_Copy" Style="{StaticResource RoundButton}" Content="AC" HorizontalAlignment="Left" Margin="179,146,0,0" VerticalAlignment="Top" Width="60" Height="60" FontFamily="Consolas" FontSize="20" Background="#FFA6A6A6" Foreground="#FF2D2E2E" />
     </Grid>
 </Window>
