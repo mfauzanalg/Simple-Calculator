@@ -9,20 +9,25 @@
         ResizeMode="NoResize"
         Background="BlanchedAlmond"
         >
-    
-       
+
+    <Window.Resources>
+        <Style  TargetType="Button" x:Key="DButton">
+            <Setter Property="Background" Value="PaleVioletRed">
+            </Setter>
+        </Style>
+    </Window.Resources>
     
     <Grid Margin="0,0,-0.333,0">
-        
         
         <Button Content="1" HorizontalAlignment="Left" Margin="31,427,0,0" VerticalAlignment="Top" Width="60" Height="60">
             <Button.Resources>
                 <Style TargetType="Border">
-                    <Setter Property="CornerRadius" Value="5"/>
+                    <Setter Property="CornerRadius" Value="20"/>
                 </Style>
             </Button.Resources>
         </Button>
-        <Button Content="2" HorizontalAlignment="Left" Margin="104,427,0,0" VerticalAlignment="Top" Width="60" Height="60"/>
+        
+        <Button Style="{StaticResource DButton}" Content="2" HorizontalAlignment="Left" Margin="104,427,0,0" VerticalAlignment="Top" Width="60" Height="60"/>
         <Button Content="3" HorizontalAlignment="Left" Margin="179,427,0,0" VerticalAlignment="Top" Width="60" Height="60"/>
         <Button Content="4" HorizontalAlignment="Left" Margin="31,357,0,0" VerticalAlignment="Top" Width="60" Height="60"/>
         <Button Content="5" HorizontalAlignment="Left" Margin="104,357,0,0" VerticalAlignment="Top" Width="60" Height="60"/>
