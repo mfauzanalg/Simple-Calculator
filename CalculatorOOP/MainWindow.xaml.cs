@@ -25,10 +25,88 @@ namespace CalculatorOOP
             InitializeComponent();
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
+        private void B0_Click(object sender, RoutedEventArgs e)
         {
-            B1.BorderBrush = new SolidColorBrush(Colors.Orange);
+            Result.Content += "0";
+        }
+        private void B1_Click(object sender, RoutedEventArgs e)
+        {
+            Result.Content += "1";
         }
 
+        private void B2_Click(object sender, RoutedEventArgs e)
+        {
+            Result.Content += "2";
+        }
+
+        private void B3_Click(object sender, RoutedEventArgs e)
+        {
+            Result.Content += "3";
+        }
+
+        private void B4_Click(object sender, RoutedEventArgs e)
+        {
+            Result.Content += "4";
+        }
+
+        private void B5_Click(object sender, RoutedEventArgs e)
+        {
+            Result.Content += "5";
+        }
+
+        private void B6_Click(object sender, RoutedEventArgs e)
+        {
+            Result.Content += "6";
+        }
+
+        private void B7_Click(object sender, RoutedEventArgs e)
+        {
+            Result.Content += "7";
+        }
+
+        private void B8_Click(object sender, RoutedEventArgs e)
+        {
+            Result.Content += "8";
+        }
+
+        private void B9_Click(object sender, RoutedEventArgs e)
+        {
+            Result.Content += "9";
+        }
+
+        private void BZ_Click(object sender, RoutedEventArgs e)
+        {
+            Result.Content += ".";
+        }
+
+        private void BP_Click(object sender, RoutedEventArgs e)
+        {
+            Result.Content += "+";
+        }
+
+        private void BM_Click(object sender, RoutedEventArgs e)
+        {
+            Result.Content += "-";
+        }
+
+        private void BX_Click(object sender, RoutedEventArgs e)
+        {
+            Result.Content += "x";
+        }
+
+        private void BD_Click(object sender, RoutedEventArgs e)
+        {
+            Result.Content += ":";
+        }
+
+        private void BS_Click(object sender, RoutedEventArgs e)
+        {
+            Result.Content += "Belum Tau apa";
+        }
+
+        private void BE_Click(object sender, RoutedEventArgs e)
+        {
+            Result.Content += "= tapi blm";
+        }
     }
 }
