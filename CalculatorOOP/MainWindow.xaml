@@ -57,6 +57,11 @@
                                 <Setter TargetName="ButtonBorder" Property="BorderBrush" Value="Orange" />
                                 <Setter TargetName="ButtonBorder" Property="BorderThickness" Value="2" />
                             </Trigger>
+
+                            
+                            <Trigger Property="Button.IsPressed" Value="True">
+                                <Setter TargetName="ButtonBorder" Property="BorderBrush" Value="Black" />
+                            </Trigger>
                         </ControlTemplate.Triggers>
 
                     </ControlTemplate>
@@ -79,6 +84,10 @@
                             <Trigger Property="Button.IsMouseOver" Value="True">
                                 <Setter TargetName="ButtonBorder" Property="BorderBrush" Value="White" />
                                 <Setter TargetName="ButtonBorder" Property="BorderThickness" Value="2" />
+                            </Trigger>
+
+                            <Trigger Property="Button.IsPressed" Value="True">
+                                <Setter TargetName="ButtonBorder" Property="BorderBrush" Value="Black" />
                             </Trigger>
                         </ControlTemplate.Triggers>
 
@@ -134,7 +143,7 @@
         <Button x:Name="BC" Style="{StaticResource RoundButton2}" Content="MC" HorizontalAlignment="Left" Margin="31,217,0,0" VerticalAlignment="Top" Width="60" Height="60" FontFamily="Consolas" FontSize="26" Background="#FFA6A6A6" Foreground="#FF2D2E2E"/>
         <Button x:Name="BR" Style="{StaticResource RoundButton2}" Content="MR" HorizontalAlignment="Left" Margin="104,217,0,0" VerticalAlignment="Top" Width="60" Height="60" FontFamily="Consolas" FontSize="26" Background="#FFA6A6A6" Foreground="#FF2D2E2E"/>
         <Button x:Name="BZ" Style="{StaticResource RoundButton2}" Content="." HorizontalAlignment="Left" Margin="104,498,0,0" VerticalAlignment="Top" Width="60" Height="60" FontFamily="Consolas" FontSize="26" Click="BZ_Click"/>
-        <Button x:Name="BO" Style="{StaticResource RoundButton2}" Content="OFF" HorizontalAlignment="Left" Margin="31,146,0,0" VerticalAlignment="Top" Width="133" Height="60" FontFamily="Consolas" FontSize="20" Background="#FFA6A6A6" Foreground="#FF2D2E2E"/>
+        <Button x:Name="BO" Style="{StaticResource RoundButton2}" Content="OFF" HorizontalAlignment="Left" Margin="31,146,0,0" VerticalAlignment="Top" Width="133" Height="60" FontFamily="Consolas" FontSize="20" Background="#FFA6A6A6" Foreground="#FF2D2E2E" Click="BO_Click"/>
         <Button x:Name="BAC" Style="{StaticResource RoundButton2}" Content="AC" HorizontalAlignment="Left" Margin="179,146,0,0" VerticalAlignment="Top" Width="60" Height="60" FontFamily="Consolas" FontSize="20" Background="#FFA6A6A6" Foreground="#FF2D2E2E" />
 
         <TextBox x:Name="Display" Style="{StaticResource Display}" HorizontalAlignment="Left" Height="101" Margin="31,25,0,0" TextWrapping="Wrap" Text="Hello Dunia" VerticalAlignment="Top" Width="282"/>

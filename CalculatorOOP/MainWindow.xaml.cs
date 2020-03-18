@@ -106,7 +106,12 @@ namespace CalculatorOOP
 
         private void BE_Click(object sender, RoutedEventArgs e)
         {
-            Result.Content += "= tapi blm";
+            Result.Content += "=";
+        }
+
+        private void BO_Click(object sender, RoutedEventArgs e)
+        {
+            System.Windows.Application.Current.Shutdown();
         }
     }
 }
