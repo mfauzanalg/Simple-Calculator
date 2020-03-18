@@ -101,7 +101,7 @@ namespace CalculatorOOP
 
         private void BS_Click(object sender, RoutedEventArgs e)
         {
-            Result.Content += "Belum Tau apa";
+            Result.Content += "√";
         }
 
         private void BE_Click(object sender, RoutedEventArgs e)
