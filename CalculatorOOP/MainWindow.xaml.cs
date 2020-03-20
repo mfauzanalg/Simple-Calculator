@@ -15,9 +15,7 @@ using System.Windows.Shapes;
 
 namespace CalculatorOOP
 {
-    /// <summary>
-    /// Interaction logic for MainWindow.xaml
-    /// </summary>
+
     public partial class MainWindow : Window
     {
         public MainWindow()
@@ -29,6 +27,7 @@ namespace CalculatorOOP
         {
             Result.Content += "0";
         }
+            
         private void B1_Click(object sender, RoutedEventArgs e)
         {
             Result.Content += "1";
