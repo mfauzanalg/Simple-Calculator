@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace CalcuOOP.Properties
+namespace CalculatorOOP.Properties
 {
 
 

@@ -12,13 +12,14 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using CalculatorButton;
 
 namespace CalculatorOOP
 {
 
     public partial class MainWindow : Window
     {
-
+       
 
         public MainWindow()
         {
@@ -80,7 +81,7 @@ namespace CalculatorOOP
         {
             Result.Content += "0";
         }
-
+            
         private void B1_Click(object sender, RoutedEventArgs e)
         {
             Result.Content += "1";
