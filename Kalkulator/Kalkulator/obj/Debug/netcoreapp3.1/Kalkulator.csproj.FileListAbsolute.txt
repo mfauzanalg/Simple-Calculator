@@ -1,0 +1,3 @@
+D:\uni\135\ii\oop\tubes\Kalkulator\Kalkulator\obj\Debug\netcoreapp3.1\Kalkulator.csprojAssemblyReference.cache
+D:\uni\135\ii\oop\tubes\Kalkulator\Kalkulator\obj\Debug\netcoreapp3.1\Kalkulator.AssemblyInfoInputs.cache
+D:\uni\135\ii\oop\tubes\Kalkulator\Kalkulator\obj\Debug\netcoreapp3.1\Kalkulator.AssemblyInfo.cs
