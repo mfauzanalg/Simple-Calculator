@@ -1,18 +1,20 @@
 ﻿using System;
 
-namespace Kalkulator
+namespace Ekspresi
 {
-    public class MultiplyExpression : BinaryExpression
+    public class MultiplyExpression<T> : BinaryExpression<T>
     {
         // ctor
-        public MultiplyExpression(Expression x, Expression y) : base(x, y)
+        public MultiplyExpression(Expression<T> x, Expression<T> y) : base(x, y)
         {
             //
         }
 
-        public override dynamic Solve()
+        public override T Solve()
         {
-            return (X.Solve() * Y.Solve());
+            dynamic d1 = X.Solve();
+            dynamic d2 = Y.Solve();
+            return (d1 * d2);
         }
     }
 }

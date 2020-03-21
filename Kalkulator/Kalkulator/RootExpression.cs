@@ -1,19 +1,20 @@
 ﻿using System;
 
-namespace Kalkulator
+namespace Ekspresi
 {
-    public class RootExpression : UnaryExpression
+    public class RootExpression<T> : UnaryExpression<T>
     {
         // ctor
-        public RootExpression(Expression x): base(x)
+        public RootExpression(Expression<T> x): base(x)
         {
             // 
         }
 
-        public override dynamic Solve()
+        public override T Solve()
         {
             // dua angka blkg koma:
-            return Math.Sqrt(X.Solve()).ToString("0.00");
+            dynamic d1 = X.Solve();
+            return Math.Sqrt(d1).ToString("0.00");
             // return (Math.Sqrt(X.Solve()));
         }
     }

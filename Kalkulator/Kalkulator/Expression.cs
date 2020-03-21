@@ -1,8 +1,8 @@
 ﻿using System;
 
-namespace Kalkulator
+namespace Ekspresi
 {
-    public abstract class Expression
+    public abstract class Expression<T>
     {
         // ctor
         public Expression()
@@ -10,6 +10,6 @@ namespace Kalkulator
             //
         }
 
-        public abstract dynamic Solve();
+        public abstract T Solve();
     }
 }

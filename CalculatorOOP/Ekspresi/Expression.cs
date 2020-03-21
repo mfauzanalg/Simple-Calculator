@@ -5,10 +5,7 @@ namespace Ekspresi
     public abstract class Expression
     {
         // ctor
-        public Expression()
-        {
-            //
-        }
+        public Expression() { }
 
         public abstract dynamic Solve();
     }

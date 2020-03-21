@@ -1,24 +1,16 @@
-﻿namespace Kalkulator
+﻿namespace Ekspresi
 {
-    public abstract class BinaryExpression : Expression
+    public abstract class BinaryExpression<T> : Expression<T>
 {
         // atribut
-        protected Expression X;
-        protected Expression Y;
+        protected Expression<T> X;
+        protected Expression<T> Y;
 
         // ctor
-        public BinaryExpression(Expression x, Expression y)
+        public BinaryExpression (Expression<T> x, Expression<T> y)
         {
             X = x;
             Y = y;
         }
-
-        // public abstract dynamic Solve();
     }
-
 }
-
-/*static void Main(string[] args)
-        {
-            Console.WriteLine("Hello World!");
-        }*/

@@ -1,17 +1,17 @@
-﻿namespace Kalkulator
+﻿namespace Ekspresi
 {
-    public class TerminalExpression : Expression
+    public class TerminalExpression<T> : Expression<T>
     {
         // atribut
-        protected dynamic X;
+        protected T X;
 
         // ctor
-        public TerminalExpression(dynamic x)
+        public TerminalExpression(T x)
         {
             X = x;
         }
 
-        public override dynamic Solve()
+        public override T Solve()
         {
             return X;
         }

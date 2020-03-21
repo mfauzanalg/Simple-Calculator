@@ -1,18 +1,20 @@
 ﻿using System;
 
-namespace Kalkulator
+namespace Ekspresi
 {
-    public class DivideExpression : BinaryExpression
+    public class DivideExpression<T> : BinaryExpression<T>
     {
         // ctor
-        public DivideExpression(Expression x, Expression y) : base(x, y)
+        public DivideExpression(Expression<T> x, Expression<T> y) : base(x, y)
         {
             //
         }
 
-        public override dynamic Solve()
+        public override T Solve()
         {
-            return (X.Solve() / Y.Solve()); // .ToString("0.00");
+            dynamic d1 = X.Solve();
+            dynamic d2 = Y.Solve();
+            return (d1 / d2);
         }
     }
 }

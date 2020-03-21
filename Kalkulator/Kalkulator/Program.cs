@@ -1,13 +1,13 @@
 ﻿using System;
 
-namespace Kalkulator
+namespace Ekspresi
 {
     static class Program
     {
         static void Main()
         {
-            // Main program
-            
+            AddExpression<int> e = new AddExpression<int>(new TerminalExpression<int> (4), new TerminalExpression<int> (6));
+            Console.WriteLine(e.Solve());
         }
     }
 }
