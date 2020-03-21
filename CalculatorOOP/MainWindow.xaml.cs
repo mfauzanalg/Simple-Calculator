@@ -12,7 +12,6 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-
 using Calculate;
 using Parsing;
 
@@ -21,9 +20,17 @@ namespace CalculatorOOP
 
     public partial class MainWindow : Window
     {
+        public static string Display;
+        public static List<string> Lstring;
+        public static dynamic Hasil;
+        public static string Ans = "";
+        public static Queue<string> Container;
+        
         public MainWindow()
         {
-            InitializeComponent();
+            Container = new Queue<string>();
+            Lstring = new List<string>();
+
             Button B0 = new Button();
             Button B1 = new Button();
             Button B2 = new Button();
@@ -34,21 +41,18 @@ namespace CalculatorOOP
             Button B7 = new Button();
             Button B8 = new Button();
             Button B9 = new Button();
-
             Button BE = new Button();
             Button BP = new Button();
             Button BM = new Button();
             Button BD = new Button();
             Button BX = new Button();
             Button BS = new Button();
-
             Button BA = new Button();
             Button BC = new Button();
             Button BR = new Button();
             Button BZ = new Button();
             Button BO = new Button();
             Button BAC = new Button();
-
 
             B0.Click += B0_Click;
             B1.Click += B1_Click;
@@ -60,20 +64,20 @@ namespace CalculatorOOP
             B7.Click += B7_Click;
             B8.Click += B8_Click;
             B9.Click += B9_Click;
-
             BE.Click += BE_Click;
             BP.Click += BP_Click;
             BM.Click += BM_Click;
             BD.Click += BD_Click;
             BX.Click += BX_Click;
             BS.Click += BS_Click;
-
             BA.Click += BA_Click;
             BC.Click += BC_Click;
             BR.Click += BR_Click;
             BZ.Click += BZ_Click;
             BO.Click += BO_Click;
             BAC.Click += BAC_Click;
+
+            InitializeComponent();
         }
 
 
@@ -159,10 +163,11 @@ namespace CalculatorOOP
 
         private void BE_Click(object sender, RoutedEventArgs e)
         {
-            Process.Display = Result.Content.ToString();
-            Process.Lstring = Parse.makeList(Process.Display);
-            Process.Hasil = Solving.solver(Process.Lstring);
-            Result.Content = Process.Hasil;
+            Display = Result.Content.ToString();
+            Lstring = Parse.makeList(Display);
+            Hasil = Solving.solver(Lstring);
+            Result.Content = Hasil;
+            Ans = Hasil.ToString();
         }
 
         private void BO_Click(object sender, RoutedEventArgs e)
@@ -177,22 +182,27 @@ namespace CalculatorOOP
 
         private void BA_Click(object sender, RoutedEventArgs e)
         {
-
+            Result.Content += Ans;
         }
 
         private void BAC_Click(object sender, RoutedEventArgs e)
         {
             Result.Content = "";
+            Ans = "";
         }
 
         private void BC_Click(object sender, RoutedEventArgs e)
         {
+            Container.Enqueue(Result.Content.ToString());
 
         }
 
         private void BR_Click(object sender, RoutedEventArgs e)
         {
-
+            if (Container.Count != 0) 
+            {
+                Result.Content += Container.Dequeue();
+            }
         }
     }
 }

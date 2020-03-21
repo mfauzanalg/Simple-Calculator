@@ -9,6 +9,6 @@ namespace Calculate
         public static string Display;
         public static List<string> Lstring;
         public static dynamic Hasil;
-        
+           
     }
 }
