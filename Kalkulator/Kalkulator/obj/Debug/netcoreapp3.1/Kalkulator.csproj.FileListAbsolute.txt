@@ -1,3 +1,14 @@
 D:\uni\135\ii\oop\tubes\Kalkulator\Kalkulator\obj\Debug\netcoreapp3.1\Kalkulator.csprojAssemblyReference.cache
 D:\uni\135\ii\oop\tubes\Kalkulator\Kalkulator\obj\Debug\netcoreapp3.1\Kalkulator.AssemblyInfoInputs.cache
 D:\uni\135\ii\oop\tubes\Kalkulator\Kalkulator\obj\Debug\netcoreapp3.1\Kalkulator.AssemblyInfo.cs
+C:\Users\FAUZAN\Documents\Semester 4\2. OOP\Tubes-1-OOP\Kalkulator\Kalkulator\bin\Debug\netcoreapp3.1\Kalkulator.exe
+C:\Users\FAUZAN\Documents\Semester 4\2. OOP\Tubes-1-OOP\Kalkulator\Kalkulator\bin\Debug\netcoreapp3.1\Kalkulator.deps.json
+C:\Users\FAUZAN\Documents\Semester 4\2. OOP\Tubes-1-OOP\Kalkulator\Kalkulator\bin\Debug\netcoreapp3.1\Kalkulator.runtimeconfig.json
+C:\Users\FAUZAN\Documents\Semester 4\2. OOP\Tubes-1-OOP\Kalkulator\Kalkulator\bin\Debug\netcoreapp3.1\Kalkulator.runtimeconfig.dev.json
+C:\Users\FAUZAN\Documents\Semester 4\2. OOP\Tubes-1-OOP\Kalkulator\Kalkulator\bin\Debug\netcoreapp3.1\Kalkulator.dll
+C:\Users\FAUZAN\Documents\Semester 4\2. OOP\Tubes-1-OOP\Kalkulator\Kalkulator\bin\Debug\netcoreapp3.1\Kalkulator.pdb
+C:\Users\FAUZAN\Documents\Semester 4\2. OOP\Tubes-1-OOP\Kalkulator\Kalkulator\obj\Debug\netcoreapp3.1\Kalkulator.csprojAssemblyReference.cache
+C:\Users\FAUZAN\Documents\Semester 4\2. OOP\Tubes-1-OOP\Kalkulator\Kalkulator\obj\Debug\netcoreapp3.1\Kalkulator.AssemblyInfoInputs.cache
+C:\Users\FAUZAN\Documents\Semester 4\2. OOP\Tubes-1-OOP\Kalkulator\Kalkulator\obj\Debug\netcoreapp3.1\Kalkulator.AssemblyInfo.cs
+C:\Users\FAUZAN\Documents\Semester 4\2. OOP\Tubes-1-OOP\Kalkulator\Kalkulator\obj\Debug\netcoreapp3.1\Kalkulator.dll
+C:\Users\FAUZAN\Documents\Semester 4\2. OOP\Tubes-1-OOP\Kalkulator\Kalkulator\obj\Debug\netcoreapp3.1\Kalkulator.pdb

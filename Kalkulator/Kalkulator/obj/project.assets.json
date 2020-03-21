@@ -8,19 +8,19 @@
     ".NETCoreApp,Version=v3.1": []
   },
   "packageFolders": {
-    "C:\\Users\\ASUS\\.nuget\\packages\\": {}
+    "C:\\Users\\FAUZAN\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\uni\\135\\ii\\oop\\tubes\\Kalkulator\\Kalkulator\\Kalkulator.csproj",
+      "projectUniqueName": "C:\\Users\\FAUZAN\\Documents\\Semester 4\\2. OOP\\Tubes-1-OOP\\Kalkulator\\Kalkulator\\Kalkulator.csproj",
       "projectName": "Kalkulator",
-      "projectPath": "D:\\uni\\135\\ii\\oop\\tubes\\Kalkulator\\Kalkulator\\Kalkulator.csproj",
-      "packagesPath": "C:\\Users\\ASUS\\.nuget\\packages\\",
-      "outputPath": "D:\\uni\\135\\ii\\oop\\tubes\\Kalkulator\\Kalkulator\\obj\\",
+      "projectPath": "C:\\Users\\FAUZAN\\Documents\\Semester 4\\2. OOP\\Tubes-1-OOP\\Kalkulator\\Kalkulator\\Kalkulator.csproj",
+      "packagesPath": "C:\\Users\\FAUZAN\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\FAUZAN\\Documents\\Semester 4\\2. OOP\\Tubes-1-OOP\\Kalkulator\\Kalkulator\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\ASUS\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\FAUZAN\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
