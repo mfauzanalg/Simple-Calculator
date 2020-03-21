@@ -51,20 +51,53 @@ namespace Parsing
     {
         public static dynamic solver(List<string> input)
         {
-            dynamic ret = 0;
+            dynamic Ret = 0;
+            Boolean isNow = false;
             Stack<double> NumS = new Stack<double>();
             Stack<string> OpS = new Stack<string>();
+
             // Masukkan ke dalam stack
             for (int i = 0; i < input.Count; i++)
             {
                 if (input[i].Equals("+") || input[i].Equals("-") || input[i].Equals("x") || input[i].Equals(":") || input[i].Equals("√"))
                 {
+                    if (input[i].Equals("x") || input[i].Equals(":"))
+                    {
+                        isNow = true;
+                    }
                     OpS.Push(input[i]);
                 }
                 else
                 {
-                    double P = Convert.ToDouble(input[i]);
-                    NumS.Push(P);
+                    if (isNow)
+                    {
+                        string Op = OpS.Pop();
+                        if (Op.Equals("x"))
+                        {
+                            dynamic Num1 = NumS.Pop();
+                            dynamic Num2 = Convert.ToDouble(input[i]);
+                            MultiplyExpression<dynamic> E = new MultiplyExpression<dynamic>(new TerminalExpression<dynamic>(Num1), new TerminalExpression<dynamic>(Num2));
+
+                            NumS.Push(E.solve());
+                            Ret = E.solve();
+                            isNow = false;
+                        }
+                        else
+                        {
+                            dynamic Num1 = NumS.Pop();
+                            dynamic Num2 = Convert.ToDouble(input[i]);
+                            DivideExpression<dynamic> E = new DivideExpression<dynamic>(new TerminalExpression<dynamic>(Num1), new TerminalExpression<dynamic>(Num2));
+
+                            NumS.Push(E.solve());
+                            Ret = E.solve();
+                            isNow = false;
+                        }
+                    }
+                    else
+                    {
+                        double P = Convert.ToDouble(input[i]);
+                        NumS.Push(P);
+                    }
                 }
             }
 
@@ -80,19 +113,28 @@ namespace Parsing
                     AddExpression<dynamic> E = new AddExpression<dynamic>(new TerminalExpression<dynamic>(Num1), new TerminalExpression<dynamic>(Num2));
 
                     NumS.Push(E.solve());
-                    ret = E.solve();
+                    Ret = E.solve();
                 }
                 else if (Op.Equals("-"))
                 {
                     dynamic Num1 = NumS.Pop();
                     dynamic Num2 = NumS.Pop();
-                    SubstractExpression<dynamic> E = new SubstractExpression<dynamic>(new TerminalExpression<dynamic>(Num1), new TerminalExpression<dynamic>(Num2));
+                    SubstractExpression<dynamic> E = new SubstractExpression<dynamic>(new TerminalExpression<dynamic>(Num2), new TerminalExpression<dynamic>(Num1));
 
                     NumS.Push(E.solve());
-                    ret = E.solve();
+                    Ret = E.solve();
+                }
+                else if (Op.Equals("√"))
+                {
+                    dynamic Num1 = NumS.Pop();
+                    RootExpression<dynamic> E = new RootExpression<dynamic>(new TerminalExpression<dynamic>(Num1));
+
+                    double temp = Convert.ToDouble(E.solve());
+                    NumS.Push(temp);
+                    Ret = E.solve();
                 }
             }
-            return ret;
+            return Ret;
         }
     }
 }
