@@ -182,7 +182,7 @@ namespace CalculatorOOP
 
         private void BAC_Click(object sender, RoutedEventArgs e)
         {
-
+            Result.Content = "";
         }
 
         private void BC_Click(object sender, RoutedEventArgs e)
