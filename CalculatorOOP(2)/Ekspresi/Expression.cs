@@ -10,6 +10,6 @@ namespace Ekspresi
             //
         }
 
-        public abstract T Solve();
+        public abstract T solve();
     }
 }

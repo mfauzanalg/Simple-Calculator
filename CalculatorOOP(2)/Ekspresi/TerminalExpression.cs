@@ -11,7 +11,7 @@
             X = x;
         }
 
-        public override T Solve()
+        public override T solve()
         {
             return X;
         }

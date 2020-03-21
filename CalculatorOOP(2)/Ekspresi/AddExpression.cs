@@ -11,10 +11,10 @@ namespace Ekspresi
             //
         }
 
-        public override T Solve()
+        public override T solve()
         {
-            dynamic d1 = X.Solve();
-            dynamic d2 = Y.Solve();
+            dynamic d1 = X.solve();
+            dynamic d2 = Y.solve();
             return (d1 + d2);
         }
     }

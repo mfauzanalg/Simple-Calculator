@@ -11,9 +11,9 @@ namespace Ekspresi
             // 
         }
 
-        public override T Solve()
+        public override T solve()
         {
-            dynamic d1 = X.Solve();
+            dynamic d1 = X.solve();
             return (-1 * d1);
         }
     }
