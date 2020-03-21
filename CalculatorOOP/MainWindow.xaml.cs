@@ -129,7 +129,7 @@ namespace CalculatorOOP
 
         private void BZ_Click(object sender, RoutedEventArgs e)
         {
-            Result.Content += ".";
+            Result.Content += ",";
         }
 
         private void BP_Click(object sender, RoutedEventArgs e)
@@ -161,7 +161,8 @@ namespace CalculatorOOP
         {
             Process.Display = Result.Content.ToString();
             Process.Lstring = Parse.makeList(Process.Display);
-
+            Process.Hasil = Solving.solver(Process.Lstring);
+            Result.Content = Process.Hasil;
         }
 
         private void BO_Click(object sender, RoutedEventArgs e)

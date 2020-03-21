@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using Ekspresi;
 
 namespace Parsing
 {
@@ -43,6 +44,55 @@ namespace Parsing
             }
 
             return Res;
+        }
+    }
+
+    class Solving
+    {
+        public static dynamic solver(List<string> input)
+        {
+            dynamic ret = 0;
+            Stack<double> NumS = new Stack<double>();
+            Stack<string> OpS = new Stack<string>();
+            // Masukkan ke dalam stack
+            for (int i = 0; i < input.Count; i++)
+            {
+                if (input[i].Equals("+") || input[i].Equals("-") || input[i].Equals("x") || input[i].Equals(":") || input[i].Equals("√"))
+                {
+                    OpS.Push(input[i]);
+                }
+                else
+                {
+                    double P = Convert.ToDouble(input[i]);
+                    NumS.Push(P);
+                }
+            }
+
+            // Solve dari Stack
+            int count = OpS.Count;
+            for (int i = 0; i < count; i++)
+            {
+                string Op = OpS.Pop();
+                if (Op.Equals("+"))
+                {
+                    dynamic Num1 = NumS.Pop();
+                    dynamic Num2 = NumS.Pop();
+                    AddExpression<dynamic> E = new AddExpression<dynamic>(new TerminalExpression<dynamic>(Num1), new TerminalExpression<dynamic>(Num2));
+
+                    NumS.Push(E.solve());
+                    ret = E.solve();
+                }
+                else if (Op.Equals("-"))
+                {
+                    dynamic Num1 = NumS.Pop();
+                    dynamic Num2 = NumS.Pop();
+                    SubstractExpression<dynamic> E = new SubstractExpression<dynamic>(new TerminalExpression<dynamic>(Num1), new TerminalExpression<dynamic>(Num2));
+
+                    NumS.Push(E.solve());
+                    ret = E.solve();
+                }
+            }
+            return ret;
         }
     }
 }
