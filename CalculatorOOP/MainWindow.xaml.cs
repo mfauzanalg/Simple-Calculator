@@ -14,6 +14,7 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 
 using Calculate;
+using Parsing;
 
 namespace CalculatorOOP
 {
@@ -159,6 +160,7 @@ namespace CalculatorOOP
         private void BE_Click(object sender, RoutedEventArgs e)
         {
             Process.Display = Result.Content.ToString();
+            Process.Lstring = Parse.makeList(Process.Display);
 
         }
 
