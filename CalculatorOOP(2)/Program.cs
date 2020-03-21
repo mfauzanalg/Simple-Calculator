@@ -1,17 +1,12 @@
-﻿using CalculatorOOP;
-
-namespace CalculatorButton 
+﻿namespace Calculate
 {
-    public class CalcButton : System.Windows.Controls.Button
+    public class Hitung
     {
-        public new void OnClick() 
+        public static string cape;
+        public static void tulis() 
         {
-            this.Click += CalcButton_Click;
+            cape = "lelah";
         }
-
-        private void CalcButton_Click(object sender, System.Windows.RoutedEventArgs e)
-        {
-
-        }
+        
     }
 }

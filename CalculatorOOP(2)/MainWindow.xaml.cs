@@ -12,15 +12,13 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-using CalculatorButton;
+using Calculate;
 
 namespace CalculatorOOP
 {
 
     public partial class MainWindow : Window
     {
-       
-
         public MainWindow()
         {
             InitializeComponent();
@@ -159,7 +157,8 @@ namespace CalculatorOOP
 
         private void BE_Click(object sender, RoutedEventArgs e)
         {
-            Result.Content += "=";
+            Hitung.tulis();
+            Result.Content = Hitung.cape;
         }
 
         private void BO_Click(object sender, RoutedEventArgs e)
