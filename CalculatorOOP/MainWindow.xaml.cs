@@ -20,10 +20,10 @@ namespace CalculatorOOP
 
     public partial class MainWindow : Window
     {
-        public static string Display;
-        public static List<string> Lstring;
+        public static string Input;
         public static dynamic Hasil;
         public static string Ans = "";
+        public static List<string> Lstring;
         public static Queue<string> Container;
         
         public MainWindow()
@@ -133,7 +133,7 @@ namespace CalculatorOOP
 
         private void BZ_Click(object sender, RoutedEventArgs e)
         {
-            Result.Content += ",";
+            Result.Content += ".";
         }
 
         private void BP_Click(object sender, RoutedEventArgs e)
@@ -163,21 +163,18 @@ namespace CalculatorOOP
 
         private void BE_Click(object sender, RoutedEventArgs e)
         {
-            Display = Result.Content.ToString();
-            Lstring = Parse.makeList(Display);
-            Hasil = Solving.solver(Lstring);
+            Input = Result.Content.ToString();
+            Input = Input.Replace(".", ",");
+            Lstring = Parse.makeList(Input);
+            Hasil = Solving.solver(Lstring).ToString();
+            Hasil = Hasil.Replace(",", ".");
             Result.Content = Hasil;
-            Ans = Hasil.ToString();
+            Ans = Hasil;
         }
 
         private void BO_Click(object sender, RoutedEventArgs e)
         {
             System.Windows.Application.Current.Shutdown();
-        }
-
-        private void UserControl1_Loaded(object sender, RoutedEventArgs e)
-        {
-
         }
 
         private void BA_Click(object sender, RoutedEventArgs e)
