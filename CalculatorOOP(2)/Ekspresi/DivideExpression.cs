@@ -7,7 +7,14 @@ namespace Ekspresi
         // ctor
         public DivideExpression(Expression<T> x, Expression<T> y) : base(x, y)
         {
-            //
+            try
+            {
+            }
+            catch(DivideByZeroException)
+            {
+                Console.Writeline("Can't Divide by O");
+                throw;
+            }
         }
 
         public override T solve()
