@@ -2,17 +2,19 @@
 
 namespace Ekspresi
 {
-    public class SubstractExpression : BinaryExpression
+    public class SubstractExpression<T> : BinaryExpression<T>
     {
         // ctor
-        public SubstractExpression(Expression x, Expression y) : base(x, y)
+        public SubstractExpression(Expression<T> x, Expression<T> y) : base(x, y)
         {
             //
         }
 
-        public override dynamic Solve()
+        public override T solve()
         {
-            return (X.Solve() - Y.Solve());
+            dynamic d1 = X.solve();
+            dynamic d2 = Y.solve();
+            return (d1 - d2);
         }
     }
 }

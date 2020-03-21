@@ -2,11 +2,14 @@
 
 namespace Ekspresi
 {
-    public abstract class Expression
+    public abstract class Expression<T>
     {
         // ctor
-        public Expression() { }
+        public Expression()
+        {
+            //
+        }
 
-        public abstract dynamic Solve();
+        public abstract T solve();
     }
 }

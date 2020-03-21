@@ -55,13 +55,13 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Parsing.cs" />
     <Compile Include="Ekspresi\AddExpression.cs" />
     <Compile Include="Ekspresi\BinaryExpression.cs" />
     <Compile Include="Ekspresi\DivideExpression.cs" />
     <Compile Include="Ekspresi\Expression.cs" />
     <Compile Include="Ekspresi\MultiplyExpression.cs" />
     <Compile Include="Ekspresi\NegativeExpression.cs" />
-    <Compile Include="Ekspresi\Program.cs" />
     <Compile Include="Ekspresi\RootExpression.cs" />
     <Compile Include="Ekspresi\SubstractExpression.cs" />
     <Compile Include="Ekspresi\TerminalExpression.cs" />

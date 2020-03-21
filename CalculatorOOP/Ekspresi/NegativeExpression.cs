@@ -3,17 +3,18 @@
 
 namespace Ekspresi
 {
-    public class NegativeExpression : UnaryExpression
+    public class NegativeExpression<T> : UnaryExpression<T>
     {
         // ctor
-        public NegativeExpression(Expression x) : base(x)
+        public NegativeExpression(Expression<T> x) : base(x)
         {
             // 
         }
 
-        public override dynamic Solve()
+        public override T solve()
         {
-            return (-1 * X.Solve());
+            dynamic d1 = X.solve();
+            return (-1 * d1);
         }
     }
 

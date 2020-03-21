@@ -13,13 +13,13 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
+using Calculate;
+
 namespace CalculatorOOP
 {
 
     public partial class MainWindow : Window
     {
-
-
         public MainWindow()
         {
             InitializeComponent();
@@ -80,7 +80,7 @@ namespace CalculatorOOP
         {
             Result.Content += "0";
         }
-
+            
         private void B1_Click(object sender, RoutedEventArgs e)
         {
             Result.Content += "1";
@@ -158,7 +158,8 @@ namespace CalculatorOOP
 
         private void BE_Click(object sender, RoutedEventArgs e)
         {
-            Result.Content += "=";
+            Process.Display = Result.Content.ToString();
+
         }
 
         private void BO_Click(object sender, RoutedEventArgs e)

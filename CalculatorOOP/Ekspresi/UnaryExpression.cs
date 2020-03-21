@@ -1,16 +1,17 @@
 ﻿namespace Ekspresi
 {
-    public abstract class UnaryExpression : Expression
+    public abstract class UnaryExpression<T> : Expression<T>
     {
         // atribut
-        protected Expression X;
+        protected Expression<T> X;
 
         // ctor
-        public UnaryExpression(Expression x)
+        public UnaryExpression(Expression<T> x)
         {
             X = x;
         }
 
-    }
+        // public abstract dynamic solve();
 
+    }
 }
