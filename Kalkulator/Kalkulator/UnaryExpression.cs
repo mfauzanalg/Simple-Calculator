@@ -11,13 +11,8 @@
             X = x;
         }
 
-        // public abstract dynamic Solve();
+        // public abstract dynamic solve();
 
     }
 
 }
-
-/*static void Main(string[] args)
-        {
-            Console.WriteLine("Hello World!");
-        }*/
