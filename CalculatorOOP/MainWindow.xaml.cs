@@ -167,10 +167,10 @@ namespace CalculatorOOP
         private void BE_Click(object sender, RoutedEventArgs e)
         {
             Input = Result.Content.ToString();
-            if (Input.Length != 1) 
+            Input = Input.Replace(".", ",");
+            Lstring = Parse.makeList(Input);
+            if (Lstring.Count != 1) 
             {
-                Input = Input.Replace(".", ",");
-                Lstring = Parse.makeList(Input);
                 try
                 {
                     bool valid = Validator.Validate(Lstring);
@@ -182,6 +182,9 @@ namespace CalculatorOOP
                 {
                     Result.Content = "Error";
                 }
+
+                Result.Content = Input.Length;
+
             }
         }
 
