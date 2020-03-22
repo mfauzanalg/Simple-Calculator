@@ -77,6 +77,14 @@ namespace Parsing
                             i++;
                             isNow = false;
                         }
+                        else if (input[i - 1].Equals("-"))
+                        {
+                            dynamic Num1 = input[i + 1];
+                            NegativeExpression<dynamic> E = new NegativeExpression<dynamic>(new TerminalExpression<dynamic>(Num1));
+                            NumS.Push(E.solve());
+                            i++;
+                            isNow = false;
+                        }
                         else
                         {
                             dynamic Num1 = input[i + 1];
@@ -135,7 +143,7 @@ namespace Parsing
                         {
                             dynamic Num1 = input[i];
                             NegativeExpression<dynamic> E = new NegativeExpression<dynamic>(new TerminalExpression<dynamic>(Num1));
-                            if (i != 1 && (!input[i - 2].Equals("+") && !input[i-2].Equals("√")))
+                            if (i != 1 && (!input[i - 2].Equals("+") && !input[i - 2].Equals("√")))
                             {
                                 OpS.Push("+");
                             }
@@ -160,7 +168,6 @@ namespace Parsing
                 {
                     dynamic Num1 = NumS.Pop();
                     dynamic Num2 = NumS.Pop();
-                    Console.WriteLine("Ini num : " + Num1 + " " + Num2);
                     AddExpression<dynamic> E = new AddExpression<dynamic>(new TerminalExpression<dynamic>(Num1), new TerminalExpression<dynamic>(Num2));
 
                     NumS.Push(E.solve());

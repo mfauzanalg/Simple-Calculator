@@ -97,7 +97,7 @@ namespace Validation
                         {
                             throw new InvalidExpression("Comma more than 1");
                         }
-                        else if ((i != end && tokenList[i + 1].Type.Equals("root")))
+                        else if ((i != end && tokenList[i + 1].Type.Equals("root") && comma != 0))
                         {
                             throw new InvalidExpression("Root after Comma");
                         }
