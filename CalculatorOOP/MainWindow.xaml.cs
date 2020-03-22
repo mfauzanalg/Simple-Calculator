@@ -14,6 +14,7 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using Calculate;
 using Parsing;
+using Validation;
 
 namespace CalculatorOOP
 {
@@ -170,10 +171,17 @@ namespace CalculatorOOP
             {
                 Input = Input.Replace(".", ",");
                 Lstring = Parse.makeList(Input);
-                Hasil = Solving.solver(Lstring).ToString();
-                Hasil = Hasil.Replace(",", ".");
-                Result.Content = Hasil;
-                Ans = Hasil;
+                try
+                {
+                    bool valid = Validator.Validate(Lstring);
+                    Hasil = Solving.solver(Lstring).ToString();
+                    Hasil = Hasil.Replace(",", ".");
+                    Result.Content = Hasil;
+                    Ans = Hasil;
+                } catch (Exception)
+                {
+                    Result.Content = "Error";
+                }
             }
         }
 
