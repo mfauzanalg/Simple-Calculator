@@ -95,7 +95,7 @@ namespace Parsing
                             }
                             else
                             {
-                                DivideExpression<dynamic> E2 = new DivideExpression<dynamic>(new TerminalExpression<dynamic>(Num3), new TerminalExpression<dynamic>(Num4));
+                                DivideExpression<dynamic> E2 = new DivideExpression<dynamic>(new TerminalExpression<dynamic>(Num4), new TerminalExpression<dynamic>(Num3));
                                 NumS.Push(E2.solve());
                                 Ret = E2.solve();
                                 isNow = false;
