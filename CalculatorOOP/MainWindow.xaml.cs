@@ -25,7 +25,6 @@ namespace CalculatorOOP
         public MainWindow()
         {
             Calcu = new Calculator();
-
             Button B0 = new Button();
             Button B1 = new Button();
             Button B2 = new Button();
@@ -73,7 +72,6 @@ namespace CalculatorOOP
             BO.Click += BO_Click;
             BAC.Click += BAC_Click;
             BBP.Click += BBP_Click;
-
             InitializeComponent();
         }
 
@@ -173,6 +171,10 @@ namespace CalculatorOOP
                     Calcu.Hasil = Calcu.Hasil.Replace(",", ".");
                     Result.Content = Calcu.Hasil;
                     Calcu.Ans = Calcu.Hasil;
+                }
+                else 
+                {
+                    Calcu.Ans = Calcu.Input.Replace(",", ".");
                 }
             } 
             catch (InvalidExpression Error)
