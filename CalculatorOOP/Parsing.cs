@@ -6,6 +6,7 @@ namespace Parsing
 {
     public class Parse
     {
+        // Memotong input menjadi list of string berdasarkan operator dan angka
         public static List<string> makeList(string input)
         {
             int i = 0;
@@ -49,6 +50,7 @@ namespace Parsing
 
     class Solving
     {
+        // Menghasilkan output dari list of string dari input
         public static dynamic solver(List<string> input)
         {
             dynamic Ret = 0;
@@ -120,7 +122,7 @@ namespace Parsing
                 {
                     if (isNow)
                     {
-                        string Op = OpS.Pop(); // Operatornya
+                        string Op = OpS.Pop(); // OMengambil Operatornya dan solve
                         if (Op.Equals("x"))
                         {
                             dynamic Num1 = NumS.Pop();

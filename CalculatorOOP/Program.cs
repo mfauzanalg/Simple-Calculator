@@ -5,6 +5,7 @@ using Validation;
 
 namespace CalculatorOOP 
 {
+    // Kelas Kalkulator
     public class Calculator
     {
         public string Input;
