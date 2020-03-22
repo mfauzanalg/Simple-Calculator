@@ -203,7 +203,14 @@ namespace CalculatorOOP
 
         private void BC_Click(object sender, RoutedEventArgs e)
         {
-            Calcu.Container.Enqueue(Result.Content.ToString());
+            Calcu.Input = Result.Content.ToString();
+            Calcu.Input = Calcu.Input.Replace(".", ",");
+            Calcu.Lstring = Parse.makeList(Calcu.Input);
+
+            if (Calcu.Lstring.Count == 1) 
+            {
+                Calcu.Container.Enqueue(Result.Content.ToString());
+            }
 
         }
 
