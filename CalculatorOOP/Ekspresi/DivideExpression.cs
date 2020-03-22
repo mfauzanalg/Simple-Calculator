@@ -12,9 +12,17 @@ namespace Ekspresi
 
         public override T solve()
         {
-            dynamic d1 = X.solve();
-            dynamic d2 = Y.solve();
-            return (d1 / d2);
+            try
+            {
+                dynamic d1 = X.solve();
+                dynamic d2 = Y.solve();
+                return (d1 / d2);
+            }
+            catch (DivideByZeroException)
+            {
+                Console.Writeln("Can't Divide by 0");
+                throw;
+            }
         }
     }
 }
