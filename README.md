@@ -10,3 +10,4 @@ CalculatorOOP dibuat menggunakan bahasa C# dengan memanfaatkan framework WPF.
 # How-to Run
 
 # Screenshot
+![c](https://user-images.githubusercontent.com/47847373/77260813-cc921a80-6cbc-11ea-983a-8f8eb8dbb70e.png)
