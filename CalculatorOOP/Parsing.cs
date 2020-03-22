@@ -62,18 +62,46 @@ namespace Parsing
                 // Kalau operator masuk sini
                 if (input[i].Equals("+") || input[i].Equals("-") || input[i].Equals("x") || input[i].Equals(":") || input[i].Equals("√"))
                 {
-                    if ((input[i].Equals("x") || input[i].Equals(":") || input[i].Equals("-")) && !isNow)
+                    if (!isNow && (input[i].Equals("x") || input[i].Equals(":") || input[i].Equals("-")))
                     {
                         isNow = true;
                         OpS.Push(input[i]);
                     }
                     else if (isNow && input[i].Equals("-"))
                     {
-                        dynamic Num1 = input[i + 1];
-                        NegativeExpression<dynamic> E = new NegativeExpression<dynamic>(new TerminalExpression<dynamic>(Num1));
-                        Console.WriteLine("ini Angkanya : " + input[i + 1]);
-                        NumS.Push(E.solve());
-                        i++;
+                        if (input[i - 1].Equals("+"))
+                        {
+                            dynamic Num1 = input[i + 1];
+                            NegativeExpression<dynamic> E = new NegativeExpression<dynamic>(new TerminalExpression<dynamic>(Num1));
+                            NumS.Push(E.solve());
+                            i++;
+                            isNow = false;
+                        }
+                        else
+                        {
+                            dynamic Num1 = input[i + 1];
+                            NegativeExpression<dynamic> E = new NegativeExpression<dynamic>(new TerminalExpression<dynamic>(Num1));
+
+                            dynamic Num3 = E.solve();
+                            dynamic Num4 = NumS.Pop();  //Convert.ToDouble(input[i-2]);
+
+                            if (input[i - 1].Equals("x"))
+                            {
+                                MultiplyExpression<dynamic> E2 = new MultiplyExpression<dynamic>(new TerminalExpression<dynamic>(Num3), new TerminalExpression<dynamic>(Num4));
+                                NumS.Push(E2.solve());
+                                Ret = E2.solve();
+                                isNow = false;
+                                i++;
+                            }
+                            else
+                            {
+                                DivideExpression<dynamic> E2 = new DivideExpression<dynamic>(new TerminalExpression<dynamic>(Num3), new TerminalExpression<dynamic>(Num4));
+                                NumS.Push(E2.solve());
+                                Ret = E2.solve();
+                                isNow = false;
+                                i++;
+                            }
+                        }
                     }
                     else
                     {
@@ -103,11 +131,10 @@ namespace Parsing
                             NumS.Push(E.solve());
                             Ret = E.solve();
                         }
-                        else // -
+                        else if (Op.Equals("-"))
                         {
                             dynamic Num1 = input[i];
                             NegativeExpression<dynamic> E = new NegativeExpression<dynamic>(new TerminalExpression<dynamic>(Num1));
-                            //Console.WriteLine("ini op sebelum - : " + input[i-2]);
                             if (i != 1 && !input[i - 2].Equals("+"))
                             {
                                 OpS.Push("+");
@@ -133,6 +160,7 @@ namespace Parsing
                 {
                     dynamic Num1 = NumS.Pop();
                     dynamic Num2 = NumS.Pop();
+                    Console.WriteLine("Ini num : " + Num1 + " " + Num2);
                     AddExpression<dynamic> E = new AddExpression<dynamic>(new TerminalExpression<dynamic>(Num1), new TerminalExpression<dynamic>(Num2));
 
                     NumS.Push(E.solve());
