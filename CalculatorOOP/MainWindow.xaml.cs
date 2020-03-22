@@ -53,6 +53,7 @@ namespace CalculatorOOP
             Button BZ = new Button();
             Button BO = new Button();
             Button BAC = new Button();
+            Button BBP = new Button();
 
             B0.Click += B0_Click;
             B1.Click += B1_Click;
@@ -76,6 +77,7 @@ namespace CalculatorOOP
             BZ.Click += BZ_Click;
             BO.Click += BO_Click;
             BAC.Click += BAC_Click;
+            BBP.Click += BBP_Click;
 
             InitializeComponent();
         }
@@ -199,6 +201,15 @@ namespace CalculatorOOP
             if (Container.Count != 0) 
             {
                 Result.Content += Container.Dequeue();
+            }
+        }
+
+        private void BBP_Click(object sender, RoutedEventArgs e)
+        {
+            string temp = Result.Content.ToString();
+            if (temp.Length != 0)
+            {
+                Result.Content = temp.Remove(temp.Length - 1);
             }
         }
     }
