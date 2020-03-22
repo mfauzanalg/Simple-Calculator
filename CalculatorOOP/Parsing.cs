@@ -25,7 +25,7 @@ namespace Parsing
                 {
                     Result += input[x];
                 }
-                // Kalau Ketemmu Operator
+                // Kalau Ketemu Operator
                 else
                 {
                     if (!Result.Equals(""))

@@ -14,7 +14,7 @@ namespace Ekspresi
         public override T solve()
         {
             dynamic d1 = X.solve();
-            return (-1 * d1);
+            return (-1 * Convert.ToDouble(d1));
         }
     }
 
