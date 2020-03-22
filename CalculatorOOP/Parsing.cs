@@ -56,22 +56,35 @@ namespace Parsing
             Stack<double> NumS = new Stack<double>();
             Stack<string> OpS = new Stack<string>();
 
-            // Masukkan ke dalam stack
+            // Memisahkan ke dalam stack
             for (int i = 0; i < input.Count; i++)
             {
+                // Kalau operator masuk sini
                 if (input[i].Equals("+") || input[i].Equals("-") || input[i].Equals("x") || input[i].Equals(":") || input[i].Equals("√"))
                 {
-                    if (input[i].Equals("x") || input[i].Equals(":"))
+                    if ((input[i].Equals("x") || input[i].Equals(":") || input[i].Equals("-")) && !isNow)
                     {
                         isNow = true;
+                        OpS.Push(input[i]);
                     }
-                    OpS.Push(input[i]);
+                    else if (isNow && input[i].Equals("-"))
+                    {
+                        dynamic Num1 = input[i + 1];
+                        NegativeExpression<dynamic> E = new NegativeExpression<dynamic>(new TerminalExpression<dynamic>(Num1));
+                        Console.WriteLine("ini Angkanya : " + input[i + 1]);
+                        NumS.Push(E.solve());
+                        i++;
+                    }
+                    else
+                    {
+                        OpS.Push(input[i]);
+                    }
                 }
-                else
+                else // Kalau angka masuk sini
                 {
                     if (isNow)
                     {
-                        string Op = OpS.Pop();
+                        string Op = OpS.Pop(); // Operatornya
                         if (Op.Equals("x"))
                         {
                             dynamic Num1 = NumS.Pop();
@@ -80,9 +93,8 @@ namespace Parsing
 
                             NumS.Push(E.solve());
                             Ret = E.solve();
-                            isNow = false;
                         }
-                        else
+                        else if (Op.Equals(":"))
                         {
                             dynamic Num1 = NumS.Pop();
                             dynamic Num2 = Convert.ToDouble(input[i]);
@@ -90,8 +102,19 @@ namespace Parsing
 
                             NumS.Push(E.solve());
                             Ret = E.solve();
-                            isNow = false;
                         }
+                        else // -
+                        {
+                            dynamic Num1 = input[i];
+                            NegativeExpression<dynamic> E = new NegativeExpression<dynamic>(new TerminalExpression<dynamic>(Num1));
+                            //Console.WriteLine("ini op sebelum - : " + input[i-2]);
+                            if (i != 1 && !input[i - 2].Equals("+"))
+                            {
+                                OpS.Push("+");
+                            }
+                            NumS.Push(E.solve());
+                        }
+                        isNow = false;
                     }
                     else
                     {
