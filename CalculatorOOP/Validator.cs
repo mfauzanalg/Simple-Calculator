@@ -3,6 +3,13 @@ using System.Collections.Generic;
 
 namespace Validation
 {
+    public class InvalidExpression : Exception
+    {
+        public InvalidExpression(String message) : base(message)
+        {
+        }
+    }
+
     class Tokens
     {
         private string text;
@@ -30,8 +37,8 @@ namespace Validation
         public static bool Validate(List<string> tokens)
         {
             List<Tokens> tokenList = Categorize(tokens);
-            int i, comma, count;
-            int end = tokenList.Count-1;
+            int i, comma;
+            int end = tokenList.Count - 1;
             Tokens prev = new Tokens();
             Tokens curr;
 
@@ -45,33 +52,39 @@ namespace Validation
                 {
                     case "op":
                         //Operator hanya bisa didahului oleh angka dan diikuti angka atau tanda negatif (angka < 0)
-                        if (i == 0 || !(prev.Type.Equals("num") && !prev.Type.Equals("op")))
+                        if (i == 0)
                         {
                             Console.WriteLine("Op exception");
-                            throw new Exception();
+                            throw new InvalidExpression("Invalid 1st \nOperator");
+                        }
+                        else if (!(prev.Type.Equals("num") && !prev.Type.Equals("op")))
+                        {
+                            throw new InvalidExpression("Operator \nbefore Operator");
                         }
                         break;
                     case "neg":
                         //Tanda '-' tidak bisa diikuti operator kec. negatif (double negative)
-                        count = 1;
-                        while (count <= 2 && curr.Type.Equals("neg"))
-                        {
-                            count++;
-                        }
-                        if (count > 2 || i == end || tokenList[i + 1].Type.Equals("op") || (i == 0 && count > 1))
+                        if (i == end)
                         {
                             Console.WriteLine("Neg exception");
-                            throw new Exception();
+                            throw new InvalidExpression("Operator \nat the end");
                         }
-                        i += count - 1;
+                        else if (tokenList[i + 1].Type.Equals("op"))
+                        {
+                            throw new InvalidExpression("Operator \nbefore Operator");
+                        }
                         break;
                     case "root":
                         //Root tidak bisa diiikuti operator
                         Console.WriteLine("Root");
-                        if (i == end || tokenList[i + 1].Type.Equals("op") || tokenList[i + 1].Type.Equals("neg"))
+                        if (i == end)
                         {
                             Console.WriteLine("Root exception");
-                            throw new Exception();
+                            throw new InvalidExpression("Operator \nat the end");
+                        }
+                        else if (tokenList[i + 1].Type.Equals("op"))
+                        {
+                            throw new InvalidExpression("Operator \nbefore Operator");
                         }
                         break;
                     default:
@@ -85,10 +98,13 @@ namespace Validation
                             }
                         }
                         //Suatu angka hanya bisa memiliki max. 1 comma (real value)
-                        if (comma > 1 || (i != end && tokenList[i+1].Type.Equals("root")))
+                        if (comma > 1)
                         {
-                            Console.WriteLine("Num exception");
-                            throw new Exception();
+                            throw new InvalidExpression("Comma more than 1");
+                        }
+                        else if ((i != end && tokenList[i + 1].Type.Equals("root")))
+                        {
+                            throw new InvalidExpression("Root after Comma");
                         }
                         break;
                 }

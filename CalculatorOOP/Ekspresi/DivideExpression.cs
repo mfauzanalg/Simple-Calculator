@@ -1,4 +1,5 @@
 ﻿using System;
+using Validation;
 
 namespace Ekspresi
 {
@@ -12,17 +13,10 @@ namespace Ekspresi
 
         public override T solve()
         {
-            try
-            {
-                dynamic d1 = X.solve();
-                dynamic d2 = Y.solve();
-                return (d1 / d2);
-            }
-            catch (DivideByZeroException)
-            {
-                Console.Writeln("Can't Divide by 0");
-                throw;
-            }
+            dynamic d1 = X.solve();
+            dynamic d2 = Y.solve();
+            if (d2 == 0) {throw new InvalidExpression("Error divide by 0"); }
+            return (d1 / d2);    
         }
     }
 }

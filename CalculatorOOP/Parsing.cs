@@ -135,7 +135,7 @@ namespace Parsing
                         {
                             dynamic Num1 = input[i];
                             NegativeExpression<dynamic> E = new NegativeExpression<dynamic>(new TerminalExpression<dynamic>(Num1));
-                            if (i != 1 && !input[i - 2].Equals("+"))
+                            if (i != 1 && (!input[i - 2].Equals("+") && !input[i-2].Equals("√")))
                             {
                                 OpS.Push("+");
                             }

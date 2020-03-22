@@ -145,7 +145,7 @@
         <Button x:Name="BBP" Style="{StaticResource RoundButton2}" Content="DEL" HorizontalAlignment="Left" Margin="179,146,0,0" VerticalAlignment="Top" Width="60" Height="60" FontFamily="Consolas" FontSize="20" Background="#FFA6A6A6" Foreground="#FF2D2E2E" Click="BBP_Click"/>
 
         <TextBox x:Name="Disp" Style="{StaticResource Display}" HorizontalAlignment="Left" Height="101" Margin="31,25,0,0" TextWrapping="Wrap" Text="Hello Dunia" VerticalAlignment="Top" Width="282"/>
-        <Label x:Name="Result" HorizontalContentAlignment="Right" Content="" HorizontalAlignment="Left" Margin="47,25,0,0" VerticalAlignment="Top" Height="91" Width="253" FontFamily="Consolas" FontSize="24"/>
+        <Label x:Name="Result" HorizontalContentAlignment="Left" Content=""  HorizontalAlignment="Left" Margin="40,34,0,0" VerticalAlignment="Top" Height="92" Width="273" FontFamily="Consolas" FontSize="24"/>
 
     </Grid>
 </Window>

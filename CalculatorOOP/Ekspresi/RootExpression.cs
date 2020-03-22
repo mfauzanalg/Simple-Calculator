@@ -1,4 +1,5 @@
 ﻿using System;
+using Validation;
 
 namespace Ekspresi
 {
@@ -14,6 +15,7 @@ namespace Ekspresi
         {
             // dua angka blkg koma:
             dynamic d1 = X.solve();
+            if (d1 < 0) {throw new InvalidExpression("Root of \nNegative num");}
             return Math.Sqrt(d1).ToString("0.00000");
         }
     }

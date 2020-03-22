@@ -169,23 +169,23 @@ namespace CalculatorOOP
             Input = Result.Content.ToString();
             Input = Input.Replace(".", ",");
             Lstring = Parse.makeList(Input);
-            if (Lstring.Count != 1) 
+
+            try
             {
-                try
+                bool valid = Validator.Validate(Lstring);
+                if (Lstring.Count != 1)
                 {
-                    bool valid = Validator.Validate(Lstring);
                     Hasil = Solving.solver(Lstring).ToString();
                     Hasil = Hasil.Replace(",", ".");
                     Result.Content = Hasil;
                     Ans = Hasil;
-                } catch (Exception)
-                {
-                    Result.Content = "Error";
                 }
-
-                Result.Content = Input.Length;
-
+            } 
+            catch (InvalidExpression Error)
+            {
+                Result.Content = Error.Message;
             }
+
         }
 
         private void BO_Click(object sender, RoutedEventArgs e)
