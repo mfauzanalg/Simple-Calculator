@@ -1,8 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
 
+// Validate input string
 namespace Validation
 {
+    // Exception class
     public class InvalidExpression : Exception
     {
         public InvalidExpression(String message) : base(message)
@@ -10,6 +12,7 @@ namespace Validation
         }
     }
 
+    // Class token to validate
     class Tokens
     {
         private string text;
@@ -26,12 +29,9 @@ namespace Validation
             this.text = text;
             this.type = type;
         }
-
-        public override string ToString()
-        {
-            return "Token: " + text + "\nType: " + type;
-        }
     }
+
+    // Validator class
     class Validator
     {
         public static bool Validate(List<string> tokens)

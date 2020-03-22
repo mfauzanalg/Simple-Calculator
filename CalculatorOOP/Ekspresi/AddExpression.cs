@@ -1,5 +1,4 @@
-﻿
-using System;
+﻿using System;
 
 namespace Ekspresi
 {
@@ -11,6 +10,7 @@ namespace Ekspresi
             //
         }
 
+        //  Add solver
         public override T solve()
         {
             dynamic d1 = X.solve();

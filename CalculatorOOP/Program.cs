@@ -1,14 +1,14 @@
 ﻿using System;
 using System.Collections.Generic;
-using Parsing;
 
-namespace Calculate
+namespace CalculatorOOP 
 {
-    public class Process
+    public class Calculator 
     {
-        public static string Display;
-        public static List<string> Lstring;
-        public static dynamic Hasil;
-           
+        public string Input;
+        public dynamic Hasil;
+        public string Ans;
+
+
     }
-}
+} 

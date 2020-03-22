@@ -13,7 +13,7 @@ namespace Ekspresi
 
         public override T solve()
         {
-            // dua angka blkg koma:
+            // Exception jika root of negative number
             dynamic d1 = X.solve();
             if (d1 < 0) {throw new InvalidExpression("Root of \nNegative num");}
             return Math.Sqrt(d1).ToString("0.00000");
