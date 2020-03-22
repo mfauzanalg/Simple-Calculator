@@ -54,7 +54,6 @@ namespace Validation
                         //Operator hanya bisa didahului oleh angka dan diikuti angka atau tanda negatif (angka < 0)
                         if (i == 0)
                         {
-                            Console.WriteLine("Op exception");
                             throw new InvalidExpression("Invalid 1st \nOperator");
                         }
                         else if (!(prev.Type.Equals("num") && !prev.Type.Equals("op")))
@@ -66,7 +65,6 @@ namespace Validation
                         //Tanda '-' tidak bisa diikuti operator kec. negatif (double negative)
                         if (i == end)
                         {
-                            Console.WriteLine("Neg exception");
                             throw new InvalidExpression("Operator \nat the end");
                         }
                         else if (tokenList[i + 1].Type.Equals("op"))
@@ -76,10 +74,8 @@ namespace Validation
                         break;
                     case "root":
                         //Root tidak bisa diiikuti operator
-                        Console.WriteLine("Root");
                         if (i == end)
                         {
-                            Console.WriteLine("Root exception");
                             throw new InvalidExpression("Operator \nat the end");
                         }
                         else if (tokenList[i + 1].Type.Equals("op"))
@@ -88,7 +84,6 @@ namespace Validation
                         }
                         break;
                     default:
-                        Console.WriteLine("Num");
                         comma = 0;
                         foreach (var chr in tokenList[i].Text)
                         {
