@@ -12,30 +12,7 @@
         >
 
     <Window.Resources>
-        <Style x:Key="TButton" TargetType="{x:Type Button}">
-            <Setter Property="OverridesDefaultStyle" Value="True"/>
-            <Setter Property="Template">
-                <Setter.Value>
-                    <ControlTemplate TargetType="{x:Type Button}">
-                        <Grid>
-                            <Border x:Name="ButtonBorder" CornerRadius="30"  
-                                BorderBrush="Black" BorderThickness="1"/>
-                            <ContentPresenter HorizontalAlignment="Center"
-                                                VerticalAlignment="Center"/>
-                        </Grid>
-
-                        <ControlTemplate.Triggers>
-                            <Trigger Property="IsPressed" Value="True">
-                                <Setter TargetName="ButtonBorder" Property="BorderBrush"
-                                        Value="Orange" />
-                            </Trigger>
-                        </ControlTemplate.Triggers>
-
-                    </ControlTemplate>
-                </Setter.Value>
-            </Setter>
-        </Style>
-
+        
         <Style TargetType="{x:Type Button}" x:Key="DButton">
             <Setter Property="Background" Value="PaleVioletRed"/>
 

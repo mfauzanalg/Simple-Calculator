@@ -198,6 +198,7 @@ namespace CalculatorOOP
         {
             Result.Content = "";
             Calcu.Ans = "";
+            Calcu.Container.Clear();
         }
 
         private void BC_Click(object sender, RoutedEventArgs e)
