@@ -166,12 +166,15 @@ namespace CalculatorOOP
         private void BE_Click(object sender, RoutedEventArgs e)
         {
             Input = Result.Content.ToString();
-            Input = Input.Replace(".", ",");
-            Lstring = Parse.makeList(Input);
-            Hasil = Solving.solver(Lstring).ToString();
-            Hasil = Hasil.Replace(",", ".");
-            Result.Content = Hasil;
-            Ans = Hasil;
+            if (Input.Length != 1) 
+            {
+                Input = Input.Replace(".", ",");
+                Lstring = Parse.makeList(Input);
+                Hasil = Solving.solver(Lstring).ToString();
+                Hasil = Hasil.Replace(",", ".");
+                Result.Content = Hasil;
+                Ans = Hasil;
+            }
         }
 
         private void BO_Click(object sender, RoutedEventArgs e)
