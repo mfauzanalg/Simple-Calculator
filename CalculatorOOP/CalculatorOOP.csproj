@@ -70,6 +70,7 @@
     <Compile Include="Ekspresi\TerminalExpression.cs" />
     <Compile Include="Ekspresi\UnaryExpression.cs" />
     <Compile Include="Parsing.cs" />
+    <Compile Include="Program.cs" />
     <Compile Include="UserButton\UserControl1.xaml.cs">
       <DependentUpon>UserControl1.xaml</DependentUpon>
     </Compile>

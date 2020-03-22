@@ -20,16 +20,11 @@ namespace CalculatorOOP
 
     public partial class MainWindow : Window
     {
-        public static string Input;
-        public static dynamic Hasil;
-        public static string Ans = "";
-        public static List<string> Lstring;
-        public static Queue<string> Container;
-        
+        public static Calculator Calcu;
+
         public MainWindow()
         {
-            Container = new Queue<string>();
-            Lstring = new List<string>();
+            Calcu = new Calculator();
 
             Button B0 = new Button();
             Button B1 = new Button();
@@ -165,19 +160,19 @@ namespace CalculatorOOP
 
         private void BE_Click(object sender, RoutedEventArgs e)
         {
-            Input = Result.Content.ToString();
-            Input = Input.Replace(".", ",");
-            Lstring = Parse.makeList(Input);
+            Calcu.Input = Result.Content.ToString();
+            Calcu.Input = Calcu.Input.Replace(".", ",");
+            Calcu.Lstring = Parse.makeList(Calcu.Input);
 
             try
             {
-                bool valid = Validator.Validate(Lstring);
-                if (Lstring.Count != 1)
+                bool valid = Calcu.Validate(Calcu.Lstring);
+                if (Calcu.Lstring.Count != 1)
                 {
-                    Hasil = Solving.solver(Lstring).ToString();
-                    Hasil = Hasil.Replace(",", ".");
-                    Result.Content = Hasil;
-                    Ans = Hasil;
+                    Calcu.Hasil = Solving.solver(Calcu.Lstring).ToString();
+                    Calcu.Hasil = Calcu.Hasil.Replace(",", ".");
+                    Result.Content = Calcu.Hasil;
+                    Calcu.Ans = Calcu.Hasil;
                 }
             } 
             catch (InvalidExpression Error)
@@ -194,26 +189,26 @@ namespace CalculatorOOP
 
         private void BA_Click(object sender, RoutedEventArgs e)
         {
-            Result.Content += Ans;
+            Result.Content += Calcu.Ans;
         }
 
         private void BAC_Click(object sender, RoutedEventArgs e)
         {
             Result.Content = "";
-            Ans = "";
+            Calcu.Ans = "";
         }
 
         private void BC_Click(object sender, RoutedEventArgs e)
         {
-            Container.Enqueue(Result.Content.ToString());
+            Calcu.Container.Enqueue(Result.Content.ToString());
 
         }
 
         private void BR_Click(object sender, RoutedEventArgs e)
         {
-            if (Container.Count != 0) 
+            if (Calcu.Container.Count != 0) 
             {
-                Result.Content += Container.Dequeue();
+                Result.Content += Calcu.Container.Dequeue();
             }
         }
 
