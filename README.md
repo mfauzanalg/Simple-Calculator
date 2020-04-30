@@ -1,25 +1,21 @@
-# Tubes-1-OOP: CalculatorOOP
-Pada Tugas Besar 1 kali ini, kami membuat kalkulator dengan mengimplementasikan konsep OOP.
-CalculatorOOP dibuat menggunakan bahasa C# dengan memanfaatkan framework WPF.
+# CalculatorOOP
+we made this calculator by implementing the OOP concept.
+CalculatorOOP is made using C # language by utilizing the WPF framework.
 
 # Struktur Data
 ![Untitled Diagram (1)](https://user-images.githubusercontent.com/47847373/77260712-4b3a8800-6cbc-11ea-88ae-46e1ab6ca2f9.png)
 
 # How-to Compile
-Buka folder CalculatorOOP
+Open CalculatorOOP folder
 
-Jalankan CalculatorOOP.sln menggunakan visual studio
+Use Visual Studio to open CalculatorOOP.sln
 
-Press F5 atau Build project dari visual studio
+Press F5 or Build project in visual studio
 
 # How-to Run
-Buka folder bin
+open bin/debug
 
-Buka folder debug
-
-Jalankan CalculatorOOP.exe
-
-Calculator ini hanya bisa dijalankan di sistem operasi windows
+Execute CalculatorOOP.exe
 
 # Screenshot
 ![c](https://user-images.githubusercontent.com/47847373/77260813-cc921a80-6cbc-11ea-983a-8f8eb8dbb70e.png)
